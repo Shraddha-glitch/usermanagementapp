@@ -52,7 +52,7 @@ class _UsersListsPageState extends State<UsersListsPage> {
   final controller = ScrollController();
   final TextEditingController _searchController = TextEditingController();
   String searchQuery = '';
-  List<UsersList> userssList = [];
+  List<UsersList> usersList = [];
   Set<int> deletedUserIds = {};
 
   @override
@@ -126,7 +126,7 @@ class _UsersListsPageState extends State<UsersListsPage> {
                 if (state is DeleteUserSuccessState) {
                   setState(() {
                     deletedUserIds.add(state.id);
-                    userssList.removeWhere((user) => user.id == state.id);
+                    usersList.removeWhere((user) => user.id == state.id);
                   });
 
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -145,7 +145,7 @@ class _UsersListsPageState extends State<UsersListsPage> {
                 listener: (context, state) {
                   if (state is UsersListsLoadedState) {
                     setState(() {
-                      userssList =
+                      usersList =
                           List<UsersList>.from(state.data)
                               .where(
                                 (user) => !deletedUserIds.contains(user.id),
@@ -163,12 +163,12 @@ class _UsersListsPageState extends State<UsersListsPage> {
                     String query = _searchController.text.toLowerCase();
                     //List<UsersList> userss = List.from(users);
                     List<UsersList> filteredUsersLists =
-                        userssList.where((userss) {
+                        usersList.where((userss) {
                           return 'G-${userss.first_name}'
                               .toLowerCase()
                               .contains(query);
                         }).toList();
-                    if (userssList.isNotEmpty) {
+                    if (usersList.isNotEmpty) {
                       return Expanded(
                         child: ListView.builder(
                           controller: controller,
@@ -274,14 +274,14 @@ class _UsersListsPageState extends State<UsersListsPage> {
 
                                                 if (updatedUser != null) {
                                                   setState(() {
-                                                    int index = userssList
+                                                    int index = usersList
                                                         .indexWhere(
                                                           (user) =>
                                                               user.id ==
                                                               userss.id,
                                                         );
                                                     if (index != -1) {
-                                                      userssList[index] = userss.rebuild(
+                                                      usersList[index] = userss.rebuild(
                                                         (b) =>
                                                             b
                                                               ..first_name =
