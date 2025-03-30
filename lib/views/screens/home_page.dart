@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:usermanagementapp/bloc/bloc/delete_user_bloc.dart';
+import 'package:usermanagementapp/bloc/delete_user/delete_user_bloc.dart';
 import 'package:usermanagementapp/bloc/users_lists/users_lists_bloc.dart';
 import 'package:usermanagementapp/models/model.dart';
 import 'package:usermanagementapp/repositories/users.dart';

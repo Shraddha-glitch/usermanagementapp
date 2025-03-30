@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # usermanagementapp
 =======
+=======
+>>>>>>> c396f914e60b918fd48b9d95544d4acf3aec9504
 # usermanagementapp
 
 A new Flutter project.
@@ -17,4 +20,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+<<<<<<< HEAD
 >>>>>>> c396f91 (Initial commit)
+=======
+>>>>>>> c396f914e60b918fd48b9d95544d4acf3aec9504
